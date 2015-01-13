@@ -1,3 +1,11 @@
 rgv_site_homepage:
     path:     /
     defaults: { _controller: RGVSiteBundle:Default:home }
+
+rgv_help_homepage:
+    path:     /help
+    defaults: { _controller: RGVSiteBundle:Default:help }
+    
+rgv_static_page:
+    path:     /page/{page}/
+    defaults: { _controller: RGVSiteBundle:Site:static }    

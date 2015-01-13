@@ -15,4 +15,9 @@ class DefaultController extends Controller
     {
         return $this->render('RGVSiteBundle:Default:home.html.twig');
     }
+    
+    public function helpAction()
+    {
+        return new \Symfony\Component\HttpFoundation\Response('Ayuda');
+    }
 }
