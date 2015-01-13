@@ -1,3 +1,7 @@
+rgv_site:
+    resource: "@RGVSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation
