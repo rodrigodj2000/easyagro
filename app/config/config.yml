@@ -77,6 +77,14 @@ swiftmailer:
     spool:     { type: memory }
 
 
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        # Your other blocks
+
 #sonata_user:
 #    security_acl: true
 #    manager_type: orm # can be orm or mongodb
