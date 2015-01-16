@@ -3,11 +3,12 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-class AppKernel extends Kernel
+class AppKernel extends Kernel  
 {
     public function registerBundles()
     {
         $bundles = array(
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -23,8 +24,9 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),            
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-            //new FOS\UserBundle\FOSUserBundle(),
-            //new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),            
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {           
