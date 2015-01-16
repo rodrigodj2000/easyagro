@@ -1,2 +1,2 @@
-# sf23base
-Aplicacion base symfony 2.3.*
+# App on Symfony 2.3
+Easyagro: Soluciones Tecnologicas para el Agro
