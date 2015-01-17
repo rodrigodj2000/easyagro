@@ -4,10 +4,10 @@ namespace RGV\EasyagroBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class ClienteController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('RGVEasyagroBundle:Default:index.html.twig');
+        return $this->render('RGVEasyagroBundle:Cliente:index.html.twig');
     }
 }

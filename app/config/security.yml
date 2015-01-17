@@ -3,17 +3,21 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_SONATA_ADMIN]
+        ROLE_ADMIN:       [ROLE_SONATA_ADMIN, ROLE_CLIENTE]
         ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_CLIENTE:        [ROLE_CLIENTE, ROLE_EMPLEADO]        
 #        SONATA:
 #            - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT  # if you are using acl then this line must be commented
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#        in_memory:
+#            memory:
+#                users:
+#                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#                    superadmin: { password: superadminpass, roles: [ 'ROLE_SUPER_ADMIN' ] }
+#                    cliente:  { password: clientepass, roles: [ 'ROLE_CLIENTE' ] }
+#                    empleado:  { password: empleadopass, roles: [ 'ROLE_EMPLEADO' ] }
         fos_userbundle:
             id: fos_user.user_manager                    
 
@@ -69,11 +73,15 @@ security:
         - { path: ^/admin/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
+        #EasyAgro
+        - { path: ^/cliente/*, role: [ROLE_CLIENTE] }  
+        - { path: ^/empleado/*, role: [ROLE_EMPLEADO] }  
+
         # Secured part of the site
         # This config requires being logged for the whole site and having the admin role for the admin part.
         # Change these rules to adapt them to your needs
         - { path: ^/admin/, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
-        - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }        
+        - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }          
 
     acl:
         connection: default
