@@ -1,1 +1,9 @@
-Bienvenido
+{% extends 'RGVSiteBundle::layout.html.twig' %}
+
+{% block title %} - Pagina inicial de prueba{% endblock %}
+
+{% block titulo %}Bienvenido{% endblock %}
+
+{% block contenido_principal %}Usted a configurado correctamente symfony!{% endblock %}
+
+{% block contenido_secundario %}<a class="btn btn-primary btn-large" href="{{ path('sonata_user_admin_security_login') }}">Administracion</a>{% endblock %}

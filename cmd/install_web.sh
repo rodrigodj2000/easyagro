@@ -1,1 +1,1 @@
-./app/console assets:install web
+./app/console assets:install web --symlink
