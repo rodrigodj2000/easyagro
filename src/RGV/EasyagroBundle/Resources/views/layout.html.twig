@@ -1,16 +1,16 @@
-{% extends '::base.html.twig' %}
+{% extends 'RGVSiteBundle::template.html.twig' %}
 
-{% block head %}            
+{% block layout_head %}            
         
     {% stylesheets '@RGVEasyagroBundle/Resources/public/css/*' filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}    
     
-    <title>{% block page_title %}{% endblock %} - EasyAgro. Soluciones Tecnológicas para el Agro - Córdoba - Argentina</title>
-
+    <title>{% block layout_title %}{% block page_title %}{% endblock %} - EasyAgro. Soluciones Tecnológicas para el Agro - Córdoba - Argentina{% endblock %}</title>    
+    
 {% endblock %}
 
-{% block body %}
+{% block layout_content %}
     
 <div class="container">
 	<div class="row clearfix page-header">
@@ -68,7 +68,7 @@
     
 {% endblock %}
 
-{% block body_end_before_js %}
+{% block layout_body_end_before_js %}
 
     {% javascripts '@RGVEasyagroBundle/Resources/public/js/*' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
