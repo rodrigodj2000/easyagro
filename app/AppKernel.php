@@ -26,7 +26,8 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),            
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new RGV\EasyagroBundle\RGVEasyagroBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {           

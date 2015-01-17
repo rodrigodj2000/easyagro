@@ -1,0 +1,3 @@
+rgv_easyagro_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: RGVEasyagroBundle:Default:index }
