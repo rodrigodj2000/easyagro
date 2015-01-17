@@ -20,6 +20,7 @@ framework:
     session:         ~
     fragments:       ~
     http_method_override: true
+    translator: ~
 
 # Twig Configuration
 twig:
@@ -29,8 +30,8 @@ twig:
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
-    use_controller: false
-    bundles:        [ RGVSiteBundle ]
+    use_controller: true
+    bundles:        [ RGVSiteBundle, RGVEasyagroBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

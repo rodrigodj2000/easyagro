@@ -2,10 +2,6 @@ rgv_easyagro:
     resource: "@RGVEasyagroBundle/Resources/config/routing.yml"
     prefix:   /
 
-rgv_site:
-    resource: "@RGVSiteBundle/Resources/config/routing.yml"
-    prefix:   /
-
 app:
     resource: @AppBundle/Controller/
     type:     annotation
