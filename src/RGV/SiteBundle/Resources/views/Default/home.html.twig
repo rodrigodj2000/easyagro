@@ -1,9 +1,25 @@
-{% extends 'RGVSiteBundle::layout.html.twig' %}
+{% extends 'RGVSiteBundle::template.html.twig' %}
 
-{% block title %} - Pagina inicial de prueba{% endblock %}
+{% block layout_title %}Pagina inicial de prueba{% endblock %}
 
-{% block titulo %}Bienvenido{% endblock %}
-
-{% block contenido_principal %}Usted a configurado correctamente symfony!{% endblock %}
-
-{% block contenido_secundario %}<a class="btn btn-primary btn-large" href="{{ path('sonata_user_admin_security_login') }}">Administracion</a>{% endblock %}
+{% block layout_content %}
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>
+                                    Bienvenido!
+				</h1>
+				<p>
+                                    Usted a configurado correctamente symfony!
+				</p>
+				<p>                                    
+                                    <a class="btn btn-primary btn-large" href="{{ path('sonata_user_security_login') }}">Ingreso</a>
+                                    <a class="btn btn-primary btn-large" href="{{ path('sonata_user_registration_register') }}">Registro</a>
+                                    <a class="btn btn-primary btn-large" href="{{ path('sonata_user_admin_security_login') }}">Administracion</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
