@@ -3,7 +3,6 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_SONATA_ADMIN]
         ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 #        SONATA:
 #            - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT  # if you are using acl then this line must be commented
@@ -15,7 +14,7 @@ security:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
         fos_userbundle:
-            id: fos_user.user_manager                    
+            id: fos_user.user_provider.username_email
 
     firewalls:
         # Disabling the security for the web debug toolbar, the profiler and Assetic.
@@ -53,7 +52,8 @@ security:
                 check_path:     /login_check
                 failure_path:   null
             logout:             true
-            anonymous:          true        
+            anonymous:          true     
+            switch_user:        true
             
 
     access_control:
