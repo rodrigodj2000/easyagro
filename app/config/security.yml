@@ -19,7 +19,6 @@ security:
 #                    cliente:  { password: clientepass, roles: [ 'ROLE_CLIENTE' ] }
 #                    empleado:  { password: empleadopass, roles: [ 'ROLE_EMPLEADO' ] }
         fos_userbundle:
-#            id: fos_user.user_manager    
             id: fos_user.user_provider.username_email
 
     firewalls:
@@ -58,7 +57,8 @@ security:
                 check_path:     /login_check
                 failure_path:   null
             logout:             true
-            anonymous:          true        
+            anonymous:          true     
+            switch_user:        true
             
 
     access_control:
