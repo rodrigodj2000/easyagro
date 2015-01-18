@@ -1,14 +1,10 @@
-{% extends "RGVEasyagroBundle::layout.html.twig" %}
+{% extends "RGVSiteBundle::layout.html.twig" %}
 
-{% block page_title %}
+{% block layout_title %}
     Area de Ingreso
 {% endblock %}
 
-{% block titulo_pagina %}    
- 
-{% endblock %}
-
-{% block side_main %} 
+{% block layout_content %} 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         Area de Usuario 
     {% else %}
@@ -89,4 +85,4 @@
         </div>        
         
     {% endif %}      
-{% endblock side_main %}
+{% endblock layout_content %}
