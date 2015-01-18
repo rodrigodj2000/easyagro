@@ -1,10 +1,10 @@
 {% extends "RGVSiteBundle::layout.html.twig" %}
 
-{% block layout_title %}
+{% block page_title %}
     Area de Ingreso
 {% endblock %}
 
-{% block layout_content %} 
+{% block contenido %} 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         Area de Usuario 
     {% else %}
